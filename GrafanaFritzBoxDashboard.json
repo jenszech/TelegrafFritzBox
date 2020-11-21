@@ -1,4 +1,46 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_INFLUXDB",
+      "label": "InfluxDB",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "influxdb",
+      "pluginName": "InfluxDB"
+    }
+  ],
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "7.1.1"
+    },
+    {
+      "type": "panel",
+      "id": "graph",
+      "name": "Graph",
+      "version": ""
+    },
+    {
+      "type": "datasource",
+      "id": "influxdb",
+      "name": "InfluxDB",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -15,11 +57,11 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
+  "id": null,
   "links": [],
   "panels": [
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -61,7 +103,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [],
@@ -89,7 +131,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -129,7 +171,6 @@
       },
       "id": 32,
       "options": {
-        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -140,7 +181,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [],
@@ -178,7 +219,7 @@
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -218,7 +259,6 @@
       },
       "id": 16,
       "options": {
-        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "mean"
@@ -229,7 +269,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [],
@@ -267,7 +307,7 @@
       "type": "gauge"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -310,7 +350,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [
@@ -361,7 +401,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -404,7 +444,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [
@@ -455,7 +495,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -494,7 +534,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "alias": "Current Speed",
@@ -620,7 +660,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -664,7 +704,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [],
@@ -692,7 +732,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -734,7 +774,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [],
@@ -762,7 +802,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -804,7 +844,7 @@
         },
         "textMode": "value"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [],
@@ -836,7 +876,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -862,7 +902,7 @@
       "fill": 1,
       "fillGradient": 5,
       "gridPos": {
-        "h": 17,
+        "h": 13,
         "w": 16,
         "x": 4,
         "y": 6
@@ -883,9 +923,6 @@
       "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
       "percentage": false,
       "pluginVersion": "7.1.1",
       "pointradius": 2,
@@ -1003,6 +1040,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:272",
           "format": "bits",
           "label": null,
           "logBase": 1,
@@ -1011,6 +1049,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:273",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1025,7 +1064,7 @@
       }
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1064,7 +1103,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "alias": "Current Speed",
@@ -1190,7 +1229,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1229,7 +1268,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [
@@ -1274,7 +1313,7 @@
       "type": "stat"
     },
     {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1313,7 +1352,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [
@@ -1358,17 +1397,10 @@
       "type": "stat"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "decimals": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null
-          },
+          "custom": {},
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -1382,147 +1414,42 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "decbytes"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 4,
         "x": 0,
         "y": 10
       },
-      "hiddenSeries": false,
-      "id": 52,
-      "legend": {
-        "alignAsTable": true,
-        "avg": false,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
-        "show": true,
-        "total": false,
-        "values": true
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
+      "id": 48,
       "options": {
-        "dataLinks": []
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
       },
-      "percentage": false,
-      "pluginVersion": "7.0.6",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
+      "pluginVersion": "7.1.1",
       "targets": [
         {
-          "alias": "Hosts Active Total",
+          "alias": "1 hour",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "1h"
               ],
               "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "HostsActive"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "network"
-            }
-          ]
-        },
-        {
-          "alias": "Lan Active",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "HostsActiveLAN"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "network"
-            }
-          ]
-        },
-        {
-          "alias": "WLAN Active",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "FritzBox",
@@ -1534,201 +1461,104 @@
             [
               {
                 "params": [
-                  "HostsActiveWLAN"
+                  "TotalBytesReceved64"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "last"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "network"
-            }
-          ]
+          "tags": []
         },
         {
-          "alias": "Hosts Known Total",
+          "alias": "1 day",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "1d"
               ],
               "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "FritzBox",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "D",
+          "refId": "A",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "HostsKnown"
+                  "TotalBytesReceved64"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "last"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "network"
-            }
-          ]
+          "tags": []
         },
         {
-          "alias": "Hosts Known LAN",
+          "alias": "1 week",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "7d"
               ],
               "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "FritzBox",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "E",
+          "refId": "B",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "HostsKnownLAN"
+                  "TotalBytesReceved64"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "network"
-            }
-          ]
-        },
-        {
-          "alias": "Hosts Known WLAN",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "F",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "HostsKnownWLAN"
-                ],
-                "type": "field"
+                "type": "last"
               },
               {
                 "params": [],
-                "type": "mean"
+                "type": "non_negative_difference"
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "network"
-            }
-          ]
+          "tags": []
         }
       ],
-      "thresholds": [],
       "timeFrom": null,
-      "timeRegions": [],
       "timeShift": null,
-      "title": "DHCP Pool",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      "title": "TotalBytesReceived",
+      "type": "stat"
     },
     {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -1758,9 +1588,6 @@
       "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
       "percentage": false,
       "pluginVersion": "7.1.1",
       "pointradius": 2,
@@ -1964,6 +1791,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:3413",
           "format": "dB",
           "label": null,
           "logBase": 1,
@@ -1972,6 +1800,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:3414",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1986,109 +1815,94 @@
       }
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
       "gridPos": {
-        "h": 7,
+        "h": 4,
         "w": 4,
         "x": 0,
-        "y": 16
+        "y": 15
       },
-      "hiddenSeries": false,
-      "id": 42,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
+      "id": 50,
       "options": {
-        "dataLinks": []
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
       },
-      "percentage": false,
       "pluginVersion": "7.1.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
       "targets": [
         {
-          "alias": "LAN",
+          "alias": "1 hour",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "1h"
               ],
               "type": "time"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "FritzBox",
           "orderByTime": "ASC",
           "policy": "default",
-          "refId": "D",
+          "refId": "C",
           "resultFormat": "time_series",
           "select": [
             [
               {
                 "params": [
-                  "HostsActiveLAN"
+                  "TotalBytesSent64"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "last"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
               }
             ]
           ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "network"
-            }
-          ]
+          "tags": []
         },
         {
-          "alias": "2.4 GHz",
+          "alias": "1 day",
           "groupBy": [
             {
               "params": [
-                "$__interval"
+                "1d"
               ],
               "type": "time"
-            },
-            {
-              "params": [
-                "previous"
-              ],
-              "type": "fill"
             }
           ],
           "measurement": "FritzBox",
@@ -2100,13 +1914,122 @@
             [
               {
                 "params": [
-                  "ClientsNumber"
+                  "TotalBytesSent64"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "last"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "1 week",
+          "groupBy": [
+            {
+              "params": [
+                "7d"
+              ],
+              "type": "time"
+            }
+          ],
+          "measurement": "FritzBox",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "TotalBytesSent64"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "last"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "TotalBytesSent",
+      "type": "stat"
+    },
+    {
+      "datasource": "${DS_INFLUXDB}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 0,
+        "y": 19
+      },
+      "id": 44,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "7.1.1",
+      "targets": [
+        {
+          "groupBy": [],
+          "measurement": "FritzBox",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "Channel"
+                ],
+                "type": "field"
               }
             ]
           ],
@@ -2117,9 +2040,133 @@
               "value": "wlan_2.4GHz"
             }
           ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": " 2.4 GHz Channel",
+      "type": "stat"
+    },
+    {
+      "datasource": "${DS_INFLUXDB}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 2,
+        "w": 2,
+        "x": 2,
+        "y": 19
+      },
+      "id": 46,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "value"
+      },
+      "pluginVersion": "7.1.1",
+      "targets": [
         {
-          "alias": "5 GHz",
+          "groupBy": [],
+          "measurement": "FritzBox",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "Channel"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "source",
+              "operator": "=",
+              "value": "wlan_5GHz"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "5 GHz Channel",
+      "type": "stat"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_INFLUXDB}",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "unit": "pps"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 10,
+        "w": 16,
+        "x": 4,
+        "y": 19
+      },
+      "hiddenSeries": false,
+      "id": 22,
+      "legend": {
+        "alignAsTable": true,
+        "avg": true,
+        "current": true,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "percentage": false,
+      "pluginVersion": "7.1.1",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "LAN Upstream",
           "groupBy": [
             {
               "params": [
@@ -2129,7 +2176,55 @@
             },
             {
               "params": [
-                "previous"
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "FritzBox",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "PacketsReceived"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "source",
+              "operator": "=",
+              "value": "lan"
+            }
+          ]
+        },
+        {
+          "alias": "LAN Downstream",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
               ],
               "type": "fill"
             }
@@ -2143,13 +2238,17 @@
             [
               {
                 "params": [
-                  "ClientsNumber"
+                  "PacketsSent"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "last"
+                "type": "mean"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
               }
             ]
           ],
@@ -2157,12 +2256,12 @@
             {
               "key": "source",
               "operator": "=",
-              "value": "wlan_5GHz"
+              "value": "lan"
             }
           ]
         },
         {
-          "alias": "Gast",
+          "alias": "WLAN 2.4 GHz Upstream",
           "groupBy": [
             {
               "params": [
@@ -2172,7 +2271,7 @@
             },
             {
               "params": [
-                "previous"
+                "none"
               ],
               "type": "fill"
             }
@@ -2186,13 +2285,17 @@
             [
               {
                 "params": [
-                  "ClientsNumber"
+                  "PacketsReceived"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "last"
+                "type": "mean"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
               }
             ]
           ],
@@ -2200,7 +2303,148 @@
             {
               "key": "source",
               "operator": "=",
-              "value": "wlan_Guest"
+              "value": "wlan_2.4GHz"
+            }
+          ]
+        },
+        {
+          "alias": "WLAN 2.4 GHz Downstream",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "FritzBox",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "PacketsSent"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "source",
+              "operator": "=",
+              "value": "wlan_2.4GHz"
+            }
+          ]
+        },
+        {
+          "alias": "WLAN 5 GHz Upstream",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "FritzBox",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "E",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "PacketsReceived"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "source",
+              "operator": "=",
+              "value": "wlan_5GHz"
+            }
+          ]
+        },
+        {
+          "alias": "WLAN 5 GHz Upstream",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "FritzBox",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "F",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "PacketsReceived"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              },
+              {
+                "params": [],
+                "type": "non_negative_difference"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "source",
+              "operator": "=",
+              "value": "wlan_5GHz"
             }
           ]
         }
@@ -2209,7 +2453,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Network Clients",
+      "title": "Local Traffic",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -2225,7 +2469,8 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "$$hashKey": "object:1554",
+          "format": "pps",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -2233,6 +2478,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:1555",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2251,7 +2497,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -2294,9 +2540,6 @@
       "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
       "percentage": false,
       "pluginVersion": "7.1.1",
       "pointradius": 2,
@@ -2574,6 +2817,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:2598",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2582,6 +2826,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:2599",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2596,198 +2841,39 @@
       }
     },
     {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "decbytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 4,
-        "x": 0,
-        "y": 23
-      },
-      "id": 48,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.0.6",
-      "targets": [
-        {
-          "alias": "1 hour",
-          "groupBy": [
-            {
-              "params": [
-                "1h"
-              ],
-              "type": "time"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "C",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "TotalBytesReceived64"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": []
-        },
-        {
-          "alias": "1 day",
-          "groupBy": [
-            {
-              "params": [
-                "1d"
-              ],
-              "type": "time"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "TotalBytesReceived64"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": []
-        },
-        {
-          "alias": "1 week",
-          "groupBy": [
-            {
-              "params": [
-                "7d"
-              ],
-              "type": "time"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "TotalBytesReceived64"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "TotalBytesReceived",
-      "type": "stat"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
-          "custom": {},
-          "unit": "pps"
+          "custom": {}
         },
         "overrides": []
       },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 6,
-        "w": 16,
-        "x": 4,
-        "y": 23
+        "h": 8,
+        "w": 4,
+        "x": 0,
+        "y": 21
       },
       "hiddenSeries": false,
-      "id": 22,
+      "id": 42,
       "legend": {
-        "alignAsTable": true,
-        "avg": true,
-        "current": true,
-        "max": true,
-        "min": true,
-        "rightSide": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
         "show": true,
         "total": false,
-        "values": true
+        "values": false
       },
       "lines": true,
       "linewidth": 1,
       "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
       "percentage": false,
       "pluginVersion": "7.1.1",
       "pointradius": 2,
@@ -2799,7 +2885,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "alias": "LAN Upstream",
+          "alias": "Clients 2.4 GHz",
           "groupBy": [
             {
               "params": [
@@ -2809,12 +2895,11 @@
             },
             {
               "params": [
-                "none"
+                "previous"
               ],
               "type": "fill"
             }
           ],
-          "hide": false,
           "measurement": "FritzBox",
           "orderByTime": "ASC",
           "policy": "default",
@@ -2824,17 +2909,13 @@
             [
               {
                 "params": [
-                  "PacketsReceived"
+                  "ClientsNumber"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
+                "type": "last"
               }
             ]
           ],
@@ -2842,12 +2923,12 @@
             {
               "key": "source",
               "operator": "=",
-              "value": "lan"
+              "value": "wlan_2.4GHz"
             }
           ]
         },
         {
-          "alias": "LAN Downstream",
+          "alias": "Clients 5 GHz",
           "groupBy": [
             {
               "params": [
@@ -2857,7 +2938,7 @@
             },
             {
               "params": [
-                "none"
+                "previous"
               ],
               "type": "fill"
             }
@@ -2871,17 +2952,13 @@
             [
               {
                 "params": [
-                  "PacketsSent"
+                  "ClientsNumber"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
+                "type": "last"
               }
             ]
           ],
@@ -2889,12 +2966,12 @@
             {
               "key": "source",
               "operator": "=",
-              "value": "lan"
+              "value": "wlan_5GHz"
             }
           ]
         },
         {
-          "alias": "WLAN 2.4 GHz Upstream",
+          "alias": "Clients Gast",
           "groupBy": [
             {
               "params": [
@@ -2904,7 +2981,7 @@
             },
             {
               "params": [
-                "none"
+                "previous"
               ],
               "type": "fill"
             }
@@ -2918,17 +2995,13 @@
             [
               {
                 "params": [
-                  "PacketsReceived"
+                  "ClientsNumber"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
+                "type": "last"
               }
             ]
           ],
@@ -2936,148 +3009,7 @@
             {
               "key": "source",
               "operator": "=",
-              "value": "wlan_2.4GHz"
-            }
-          ]
-        },
-        {
-          "alias": "WLAN 2.4 GHz Downstream",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "D",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "PacketsSent"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "wlan_2.4GHz"
-            }
-          ]
-        },
-        {
-          "alias": "WLAN 5 GHz Upstream",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "E",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "PacketsReceived"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "wlan_5GHz"
-            }
-          ]
-        },
-        {
-          "alias": "WLAN 5 GHz Downstream",
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "none"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "F",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "PacketsSent"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "source",
-              "operator": "=",
-              "value": "wlan_5GHz"
+              "value": "wlan_Guest"
             }
           ]
         }
@@ -3086,7 +3018,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Local Traffic",
+      "title": "WLAN Clients",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -3102,7 +3034,8 @@
       },
       "yaxes": [
         {
-          "format": "pps",
+          "$$hashKey": "object:6445",
+          "format": "short",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -3110,6 +3043,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:6446",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -3124,160 +3058,7 @@
       }
     },
     {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "decbytes"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 3,
-        "w": 4,
-        "x": 0,
-        "y": 26
-      },
-      "id": 50,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "area",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.0.6",
-      "targets": [
-        {
-          "alias": "1 hour",
-          "groupBy": [
-            {
-              "params": [
-                "1h"
-              ],
-              "type": "time"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "C",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "TotalBytesSent64"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": []
-        },
-        {
-          "alias": "1 day",
-          "groupBy": [
-            {
-              "params": [
-                "1d"
-              ],
-              "type": "time"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "TotalBytesSent64"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": []
-        },
-        {
-          "alias": "1 week",
-          "groupBy": [
-            {
-              "params": [
-                "7d"
-              ],
-              "type": "time"
-            }
-          ],
-          "measurement": "FritzBox",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "B",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "TotalBytesSent64"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              },
-              {
-                "params": [],
-                "type": "non_negative_difference"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "TotalBytesSent",
-      "type": "stat"
-    },
-    {
-      "datasource": null,
+      "datasource": "${DS_INFLUXDB}",
       "fieldConfig": {
         "defaults": {
           "custom": {},
@@ -3319,7 +3100,7 @@
         },
         "textMode": "auto"
       },
-      "pluginVersion": "7.0.6",
+      "pluginVersion": "7.1.1",
       "targets": [
         {
           "groupBy": [],
@@ -3348,7 +3129,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 25,
+  "schemaVersion": 26,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -3362,5 +3143,5 @@
   "timezone": "",
   "title": "FritzBoxDashboard",
   "uid": "INoNQciRk",
-  "version": 21
+  "version": 15
 }

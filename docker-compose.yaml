@@ -1,0 +1,33 @@
+version: '2'
+
+networks:
+  tig:
+
+services:
+  influxdb:
+    image: influxdb:1.8.1
+    container_name: influxdb
+    environment:
+      INFLUXDB_DB: FritzBox
+      INFLUXDB_USER: telegraf
+      INFLUXDB_USER_PASSWORD: mysecretpassword
+    ports:
+      - "8086:8086"
+    volumes:
+      - /media/enc/docker-volumes/influxdb:/var/lib/influxdb
+      - /media/enc/docker-volumes/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf
+    networks:
+      - tig
+
+  telegraf:
+    image: itobey/telegraf-fritzbox:1.0
+    container_name: telegraf
+    environment:
+      INFLUXDB_URL: http://influxdb:8086
+    volumes:
+      - /media/enc/docker-volumes/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    depends_on:
+      - "influxdb"
+    networks:
+      - tig
+
