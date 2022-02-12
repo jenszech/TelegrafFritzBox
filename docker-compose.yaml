@@ -2,8 +2,8 @@ version: '3.6'
 
 services:
   telegraf:
-    container_name: telegraf-fritzbox
-    image: jenszech/telegraf-fritzbox:latest
+    container_name: telegraf-fritzbox4pi
+    image: jenszech/telegraf-fritzbox4pi:latest
     restart: unless-stopped
     environment:
       - TZ=Etc/UTC

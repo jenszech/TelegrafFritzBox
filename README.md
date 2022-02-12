@@ -11,6 +11,11 @@ The TIG-stack is required. This assumes you already have Grafana and Influx runn
 * Remove InfluxDB from docker-compose.yaml
 * Change docker-compose for compatiblity with IOTstack
 
+## Getting started
+```
+docker build -t telegraf-fritzbox4pi .
+```
+
 <hr>
 
 # Original Readme.md
