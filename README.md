@@ -1,3 +1,19 @@
+# Fork of Itobey/Lexiv/TelegrafFritzBox
+
+## Introduction
+
+This is a fork to create a Docker-based version of TelegrafFritzBox for DSL Internet. I tested this using a FritzBox 7590 with FRITZ!OS: 07.29 and with Docker under Raspberry Pi 4 4GB. 
+
+The TIG-stack is required. This assumes you already have Grafana and Influx running in another docker network. If this is not the case, feel free to add Grafana or Influx to the docker-compose.yaml or to other means of running this stack, as the yaml provided only contains Telegraf.
+
+## Changes in this fork
+* Set the DSL-variable to true in the TelegrafFritzBox script
+* Remove InfluxDB from docker-compose.yaml
+* Change docker-compose for compatiblity with IOTstack
+
+<hr>
+
+# Original Readme.md
 # Fork of Lexiv/TelegrafFritzBox
 
 ## Introduction
@@ -32,8 +48,6 @@ No need to enable any options, just fill in the InfluxDB details. If you went wi
 Import `GrafanaFritzBoxDashboard.json` in Grafana and choose the InfluxDB. This json is from another fork of this Github Project - some panels do not work with cable as opposed to DSL (TotalBytesReceived, TotalBytesSent and Line Damping - can't say if Errors work, as there are currently no errors). I might work on the dashboard in the future.
 
 <hr>
-
-# Original Readme.md
 
 [![MIT license](https://img.shields.io/github/license/Schmidsfeld/TelefrafFritzBox?color=blue)](https://opensource.org/licenses/MIT)
 [![made-with-python](https://img.shields.io/badge/Python-3.7%2C%203.8-green)](https://www.python.org)

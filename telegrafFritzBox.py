@@ -16,7 +16,7 @@ import itertools
 
 
 FRITZBOX_ID = 'FritzBox' # Name of the InfluxDB database.
-IS_DSL = False # Switch to False for Cable or IP Connections
+IS_DSL = True # Switch to False for Cable or IP Connections
 
 
 # This script uses optionally the environment variables for authentification:
