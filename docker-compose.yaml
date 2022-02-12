@@ -1,9 +1,9 @@
 version: '3.6'
 
 services:
-  telegraf:
+  telegraf-fritzbox:
     container_name: telegraf-fritzbox4pi
-    image: jenszech/telegraf-fritzbox4pi:latest
+    image: telegraf-fritzbox4pi:latest
     restart: unless-stopped
     environment:
       - TZ=Etc/UTC
@@ -12,7 +12,7 @@ services:
       - "8094:8094/tcp"
       - "8125:8125/udp"
     volumes:
-      - ./volumes/telegraf:/etc/telegraf
+      - ./volumes/telegraf-fritzbox:/etc/telegraf
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
     networks:
