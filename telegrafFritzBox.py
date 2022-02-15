@@ -146,7 +146,8 @@ wlanInfoGuest = readfritz('WLANConfiguration3', 'GetInfo')
 wlanAssoc24 = readfritz('WLANConfiguration1', 'GetTotalAssociations')
 wlanAssoc50 = readfritz('WLANConfiguration2', 'GetTotalAssociations')
 wlanAssocGuest = readfritz('WLANConfiguration3', 'GetTotalAssociations')
-
+dect = readfritz('X_AVM-DE_Dect1', 'GetNumberOfDectEntries')
+voip = readfritz('X_VoIP1', 'X_AVM-DE_GetNumberOfNumbers')
 
 # Parse single variables into influxdb compatible strings
 
@@ -209,6 +210,8 @@ if IS_DSL:
 # Local network Statistics
 lanPackageUp = extractvar(lanStat, 'NewPacketsSent', True)
 lanPackageDown = extractvar(lanStat, 'NewPacketsReceived', True)
+lanBytesSend = extractvar(lanStat, 'NewBytesSent', True)
+lanBytesReceived = extractvar(lanStat, 'NewBytesReceived', True)
 wlanPackageUp24 = extractvar(wlanStat24, 'NewTotalPacketsSent', True, False, 'PacketsSent' )
 wlanPackageDown24 = extractvar(wlanStat24, 'NewTotalPacketsReceived', True, False, 'PacketsReceived')
 wlanPackageUp50 = extractvar(wlanStat50, 'NewTotalPacketsSent', True, False, 'PacketsSent')
@@ -224,6 +227,9 @@ wlanChannelGuest = extractvar(wlanInfoGuest, 'NewChannel', True)
 wlanClients24 = extractvar(wlanAssoc24, 'NewTotalAssociations', True, False, 'ClientsNumber')
 wlanClients50 = extractvar(wlanAssoc50, 'NewTotalAssociations', True, False, 'ClientsNumber')
 wlanClientsGuest = extractvar(wlanAssocGuest, 'NewTotalAssociations', True, False, 'ClientsNumber')
+
+telefon_dect=extractvar(dect, 'NewNumberOfEntries', True)
+telefon_voip=extractvar(voip, 'NewNumberOfNumbers', True)
 
 
 # Output variables as sets of influxdb compatible lines
@@ -243,7 +249,7 @@ if IS_DSL:
 network = assemblevar(externalIP, dns, localDns, hostsEntry, hostsKnown, hostsKnownLAN, hostsKnownWLAN, hostsActive, hostsActiveLAN, hostsActiveWLAN)
 influxrow('network', network)
 
-lan = assemblevar(lanPackageUp, lanPackageDown)
+lan = assemblevar(lanBytesSend, lanBytesReceived, lanPackageUp, lanPackageDown)
 influxrow('lan', lan)
 
 wlan24 = assemblevar(wlanName24, wlanChannel24, wlanClients24, wlanPackageUp24, wlanPackageDown24)
@@ -254,3 +260,6 @@ influxrow('wlan_5GHz', wlan50)
 
 wlanGuest = assemblevar(wlanNameGuest, wlanChannelGuest, wlanClientsGuest, wlanPackageUpGuest, wlanPackageDownGuest)
 influxrow('wlan_Guest', wlanGuest)
+
+dectrow = assemblevar(telefon_dect, telefon_voip)
+influxrow('telefon', dectrow)
