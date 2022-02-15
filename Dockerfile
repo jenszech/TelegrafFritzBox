@@ -1,4 +1,4 @@
-FROM telegraf:latest
+FROM telegraf-iostack:latest
 LABEL description="Based on telegraf, this image adds python3 and a telegraf input script to feed fritbox metrics into an influxdb"
 
 
