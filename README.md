@@ -12,9 +12,42 @@ The TIG-stack is required. This assumes you already have Grafana and Influx runn
 * Change docker-compose for compatiblity with IOTstack
 
 ## Getting started
+### For local testing
+```
+pip3 install fritzconnection
+python3 telegrafFritzBox.py -i x.x.x.x -u <FritzBoxUser> -p <FritzBoxPassword>
+```
+
+### Run as standalone dockercontainer
 ```
 docker build -t telegraf-fritzbox4pi .
 ```
+
+### Alternative use with the IOTstack
+(See https://github.com/SensorsIot/IOTstack for mor informations)
+
+Build at first the native telegraf container with IOTstack template
+```
+cd ./IOTstack/.templates/telegraf
+docker build -t telegraf-iostack .
+```
+Then edit the IOTstack docker-compose.yml
+```
+  telegraf-fritzbox:
+    container_name: telegraf-fritzbox
+    build: ../TelegrafFritzBox/.
+    restart: unless-stopped
+    environment:
+    - TZ=Etc/UTC
+    ports:
+    - "8092:8092/udp"
+    - "8094:8094/tcp"
+    - "8125:8125/udp"
+    volumes:
+    - ./volumes/telegraf:/etc/telegraf
+    - /var/run/docker.sock:/var/run/docker.sock:ro
+```
+Now you can use telegraf like the plain telegraf container and additionally the fritzconnection part
 
 <hr>
 
