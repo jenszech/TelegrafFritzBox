@@ -5,7 +5,7 @@ LABEL description="Based on telegraf, this image adds python3 and a telegraf inp
 RUN apt-get update && \
 	apt-get upgrade -y && \
 	apt-get install -y python3 python3-pip rsync
-RUN	pip3 install fritzconnection
+RUN	pip3 install --break-system-packages fritzconnection
 
 WORKDIR /usr/local/bin
 COPY telegrafFritzBox.py .
